@@ -345,7 +345,11 @@ footer{border-top:1px solid var(--line);background:#050609;padding:clamp(40px,6v
 .f-biz .k{color:#4C5561;min-width:92px;display:inline-block;flex:0 0 auto}
 .f-biz a:hover{color:var(--fg-dim)}
 .f-copy{margin-top:26px;font-size:11.5px;color:#454E59;font-family:var(--mono);letter-spacing:.04em}
-@media(max-width:760px){.f-biz{grid-template-columns:1fr}}
+@media(max-width:760px){
+  .f-biz{grid-template-columns:1fr;gap:12px 20px}
+  .f-biz div{display:block}
+  .f-biz .k{display:block;min-width:0;margin-bottom:2px;font-size:11.5px;color:#4C5561}
+}
 
 /* sticky mobile cta */
 .mobile-bar{
@@ -833,7 +837,7 @@ footer{border-top:1px solid var(--line);background:#050609;padding:clamp(40px,6v
     <div class="legal">
       <p>디지털 창작물(전자책·강의)은 <b>자료 발송 및 열람이 시작된 이후 청약철회(환불)가 제한</b>됩니다.</p>
       <p>아래 항목에 동의해 주셔야 신청이 진행됩니다.</p>
-      <p style="color:#FFD485;font-weight:700;margin-top:14px">☑ [필수] 자료 발송 및 열람 개시 이후 청약철회 제한에 동의합니다</p>
+      <p style="color:#FFD485;font-weight:700;margin-top:14px">[필수] 자료 발송 및 열람 개시 이후 청약철회 제한에 동의합니다</p>
     </div>
     <div class="modal-actions">
       <button class="btn btn-ghost" data-close>닫기</button>
