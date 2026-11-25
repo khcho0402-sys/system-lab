@@ -107,7 +107,7 @@ h1{
 }
 h1 .hl{position:relative;color:var(--orange);white-space:nowrap}
 h1 .hl::after{
-  content:"";position:absolute;left:0;right:0;bottom:.06em;height:.22em;border-radius:3px;
+  content:"";position:absolute;left:-.02em;right:-.02em;bottom:.02em;height:.16em;border-radius:3px;
   background:rgba(255,90,31,.16);z-index:-1;
 }
 .hero-sub{
@@ -170,7 +170,8 @@ h1 .hl::after{
   .op-photo img{height:280px;object-position:50% 16%}
 }
 @media(max-width:560px){
-  .hero-price{gap:10px}
+  .hero-price{gap:14px}
+  .price-anchor{font-size:14px}
   .price-tag{order:3}
   h1{font-size:clamp(28px,7.6vw,38px)}
   h1 br.pc{display:none}
