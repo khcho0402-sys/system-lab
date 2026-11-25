@@ -167,7 +167,7 @@ h1 .hl::after{
 @media(max-width:900px){
   .hero-grid{grid-template-columns:1fr;gap:30px;padding-top:26px}
   .op-card{order:2;max-width:430px;margin:0 auto;width:100%}
-  .op-photo img{height:280px;object-position:50% 16%}
+  .op-photo img{height:280px;object-position:50% 4%}
 }
 @media(max-width:560px){
   .hero-price{gap:14px}
@@ -511,6 +511,11 @@ h2 .orange{color:var(--orange)}
   font-size:11.5px;letter-spacing:.02em;color:var(--muted-2);font-weight:700;flex-wrap:wrap;
 }
 .paybar span{color:#D6CCC3}
+
+@media(max-width:520px){
+  .price-row{flex-direction:column;align-items:center;gap:6px}
+  .price-row .was{font-size:15px}
+}
 
 /* faq */
 .faq{margin-top:32px;border-top:1px solid var(--line)}
