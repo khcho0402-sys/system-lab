@@ -116,9 +116,10 @@ h1 .hl::after{
 }
 .hero-sub b{color:var(--ink);font-weight:800}
 .hero-price{
-  margin:28px 0 0;display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  margin:26px 0 0;display:flex;flex-direction:column;align-items:flex-start;gap:8px;
 }
-.price-anchor{font-size:15px;color:var(--muted-2);text-decoration:line-through;text-decoration-thickness:1.5px}
+.hero-price .price-line{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.price-anchor{font-size:14.5px;color:var(--muted-2);text-decoration:line-through;text-decoration-thickness:1.5px}
 .price-now{font-size:clamp(30px,4.6vw,40px);font-weight:800;letter-spacing:-.04em;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums}
 .price-now small{font-size:.44em;font-weight:800;color:var(--ink-2);margin-left:3px;letter-spacing:0}
 .price-tag{
@@ -170,9 +171,6 @@ h1 .hl::after{
   .op-photo img{height:280px;object-position:50% 4%}
 }
 @media(max-width:560px){
-  .hero-price{flex-direction:column;align-items:flex-start;gap:6px}
-  .price-anchor{font-size:14px}
-  .price-tag{order:3}
   h1{font-size:clamp(28px,7.6vw,38px)}
   h1 br.pc{display:none}
   .hero-actions .btn{flex:1 1 46%;padding:0 12px;font-size:14.5px;height:52px}
@@ -231,7 +229,7 @@ h2 .orange{color:var(--orange)}
 .tick{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:8px}
 .tick li{display:flex;gap:9px;font-size:14.5px;color:var(--ink-2);line-height:1.62}
 .tick li::before{content:"✓";color:var(--orange);font-weight:900;flex:0 0 auto;font-size:13px;margin-top:2px}
-.card-2col{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(20px,3vw,36px);align-items:start}
+.card-2col{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(20px,3vw,36px);align-items:center}
 .fb-box{background:var(--cream);border:1px solid #F6E4D7;border-radius:16px;padding:20px}
 .fb-t{font-size:12.5px;font-weight:800;color:var(--orange-d);letter-spacing:-.01em}
 .fb-list{margin:12px 0 0;padding:0;list-style:none;display:grid;gap:10px;counter-reset:none}
@@ -371,9 +369,10 @@ h2 .orange{color:var(--orange)}
 }
 
 /* capture gallery */
-.shots{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:16px;align-items:start}
+.shots{column-count:2;column-gap:14px;margin-top:16px}
 .shot{
-  display:block;width:100%;text-align:left;padding:0;border:1px solid var(--line);border-radius:18px;
+  display:block;width:100%;margin:0 0 14px;break-inside:avoid;-webkit-column-break-inside:avoid;page-break-inside:avoid;
+  text-align:left;padding:0;border:1px solid var(--line);border-radius:18px;
   background:#fff;overflow:hidden;cursor:zoom-in;box-shadow:var(--shadow-s);
   transition:border-color .2s ease,transform .2s ease,box-shadow .2s ease;
 }
@@ -390,7 +389,7 @@ h2 .orange{color:var(--orange)}
   background:#FFFBF7;border:1px solid #F6E7DA;border-left:3px solid var(--orange);
   border-radius:10px;padding:12px 14px;
 }
-@media(max-width:700px){.shots{grid-template-columns:1fr}}
+@media(max-width:700px){.shots{column-count:1}}
 
 /* zoom lightbox */
 .zoom{position:fixed;inset:0;z-index:120;display:none;background:#0B0C0E}
@@ -658,8 +657,10 @@ footer{border-top:1px solid var(--line);background:#FBF8F5;padding:clamp(38px,5.
 
         <div class="hero-price reveal">
           <span class="price-anchor">정가 3,000,000원</span>
-          <span class="price-now">990,000<small>원</small></span>
-          <span class="price-tag">론칭 특가</span>
+          <div class="price-line">
+            <span class="price-now">990,000<small>원</small></span>
+            <span class="price-tag">론칭 특가</span>
+          </div>
         </div>
 
         <div class="hero-actions reveal">
